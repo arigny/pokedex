@@ -10,17 +10,14 @@ interface IPokemon {
 
 // function Pokemon({id, name, image, type}:IPokemon) {
 function Pokemon() {
-    // const [error, setError] = useState('');
     const [name, setName] = useState('' || []);
     const [type, setType] = useState('');
     const [image, setImage] = useState('');
     const [id, setId] = useState('');
 
     useEffect(() => {
-        // getPokemon(1)
-        getPokemon(2)
+        getPokemon(1)
     })
-    // }, [])
 
     const getPokemon = async (id: number): Promise<void> => {
         const data: Response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -52,30 +49,9 @@ function Pokemon() {
         return output
     }
 
-
-    // const data = fetch('https://pokeapi.co/api/v2/pokemon/' + name)
-    //     .then(response => {
-    //         if (response.ok) {
-    //             return response.json();
-    //         } else {
-    //             throw new Error("Sorry something went wrong")
-    //         }
-    //     })
-    //     .then(users => {
-    //         console.log(users.abilities['0']['ability']['name']);
-    //         console.log(users.abilities['1']['ability']['name']);
-    //         // console.log(users)
-    //         return users;
-    //     })
-        // .catch(error => {
-        //     setError(error.message)
-        // })
-
-    // return <div>{`${id}, ${name}, ${type}, ${image}`}</div>
-
-    getPokemon(736);
+    // getPokemon(736);
     return (
-        <div>
+        <div className="test">
             <p>{id} | {name} | {type}</p>
             {/* <img src={image} /> */}
         </div>
