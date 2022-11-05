@@ -50,10 +50,45 @@ function Pokemon() {
     }
 
     // getPokemon(736);
+    // const typeColour = "#FF5733";
+    const typeColour = "white";
     return (
-        <div className="test">
-            <p>{id} | {name} | {type}</p>
+        <div className="cards">
+            <div className="card">
             <img src={image} />
+            <p className="title">{id} - {name}</p>
+            <p style={{ color: typeColour }}> {type} </p>
+            </div>
+
+            <div className="card">
+            <img src={image} />
+            <p className="title">{id} - {name}</p>
+            <p> {type} </p>
+            </div>
+
+            <div className="card">
+            <img src={image} />
+            <p className="title">{id} - {name}</p>
+            <p> {type} </p>
+            </div>
+
+            <div className="card">
+            <img src={image} />
+            <p className="title">{id} - {name}</p>
+            <p> {type} </p>
+            </div>
+
+            <div className="card">
+            <img src={image} />
+            <p className="title">{id} - {name}</p>
+            <p> {type} </p>
+            </div>
+
+            <div className="card">
+            <img src={image} />
+            <p className="title">{id} - {name}</p>
+            <p> {type} </p>
+            </div>
         </div>
     )
 }
