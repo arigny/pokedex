@@ -53,7 +53,7 @@ function Pokemon() {
     return (
         <div className="test">
             <p>{id} | {name} | {type}</p>
-            {/* <img src={image} /> */}
+            <img src={image} />
         </div>
     )
 }
