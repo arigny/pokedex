@@ -40,14 +40,17 @@
 .cards {
   place-self: center;
   display: grid;
+  /* eventually move <Pokemon/> component in App.tsx out of header section
+     and then need to allow one of the following lines. First keeps width
+     fixed upon window resizing, while second changes width to fill when
+     window size changes */
+  /* grid-template-columns: repeat(auto-fill, 200px); */
+  /* grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); */
   grid-template-columns: repeat(3, minmax(230px, 1fr));
-  /* grid-template-rows: max-content 200px 1fr; */
   grid-gap: 20px;
 }
 
 .card {
-  /* display: grid; */
-  /* grid-template-rows: max-content 200px 1fr; */
   width: 230px;
   height: 350px;
   background-color: gray;
