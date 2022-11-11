@@ -68,4 +68,7 @@
 
 .container {
   background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 8px;
 }
