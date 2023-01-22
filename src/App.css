@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #F6F8FC;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,73 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.cards {
+  place-self: center;
+  display: grid;
+  /* eventually move <Pokemon/> component in App.tsx out of header section
+     and then need to allow one of the following lines. First keeps width
+     fixed upon window resizing, while second changes width to fill when
+     window size changes */
+  /* grid-template-columns: repeat(auto-fill, 200px); */
+  /* grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); */
+  grid-template-columns: repeat(3, minmax(230px, 1fr));
+  grid-gap: 20px;
+}
+
+.card {
+  width: 319px;
+  height: 192px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  border-radius: 20px;
+  font-size: 24px;
+}
+
+.card img {
+  /* object-fit: cover; */
+  width: 50%;
+  /* height: 70%; */
+  margin: auto;
+  position: relative;
+  top: -40%;
+}
+
+.id {
+  position: relative;
+  top: -45%;
+  margin-bottom: 0px;
+  color: #8F9396;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.name {
+  position: relative;
+  top: -45%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.type {
+  margin: auto;
+  position: relative;
+  top: -45%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* width: 60px; */
+  padding: 2px;
+  color: #000000;
+  font-size: 16px;
+}
+
+.container {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 8px;
 }
