@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #F6F8FC;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -51,19 +51,52 @@
 }
 
 .card {
-  width: 230px;
-  height: 350px;
-  background-color: gray;
+  width: 319px;
+  height: 192px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.1);
   padding: 8px;
-  border-radius: 16px;
+  border-radius: 20px;
   font-size: 24px;
 }
 
 .card img {
   /* object-fit: cover; */
-  width: 70%;
+  width: 50%;
   /* height: 70%; */
   margin: auto;
+  position: relative;
+  top: -40%;
+}
+
+.id {
+  position: relative;
+  top: -45%;
+  margin-bottom: 0px;
+  color: #8F9396;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.name {
+  position: relative;
+  top: -45%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.type {
+  margin: auto;
+  position: relative;
+  top: -45%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* width: 60px; */
+  padding: 2px;
+  color: #000000;
+  font-size: 16px;
 }
 
 .container {

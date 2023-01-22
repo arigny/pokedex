@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { isPlusToken } from 'typescript';
+import { PokeCard } from './PokeCard';
 
 interface IPokemon {
     id: number;
@@ -10,10 +10,10 @@ interface IPokemon {
 
 // function Pokemon({id, name, image, type}:IPokemon) {
 function Pokemon() {
-    const [name, setName] = useState('' || []);
+    const [name, setName] = useState<any>('' || []);
     const [type, setType] = useState('');
     const [image, setImage] = useState('');
-    const [id, setId] = useState('');
+    const [id, setId] = useState(0);
 
     useEffect(() => {
         getPokemon(1)
@@ -29,6 +29,7 @@ function Pokemon() {
             .map((poke: any) => poke.ability.name)
             .join(", ")
         console.log(pokemonAbilities)
+
         const transformedPokemon = {
             id: pokemon.id,
             name: pokemon.name,
@@ -54,41 +55,7 @@ function Pokemon() {
     const typeColour = "white";
     return (
         <div className="cards">
-            <div className="card">
-            <img src={image} />
-            <p className="title">{id} - {name}</p>
-            <p style={{ color: typeColour }}> {type} </p>
-            </div>
-
-            <div className="card">
-            <img src={image} />
-            <p className="title">{id} - {name}</p>
-            <p> {type} </p>
-            </div>
-
-            <div className="card">
-            <img src={image} />
-            <p className="title">{id} - {name}</p>
-            <p> {type} </p>
-            </div>
-
-            <div className="card">
-            <img src={image} />
-            <p className="title">{id} - {name}</p>
-            <p> {type} </p>
-            </div>
-
-            <div className="card">
-            <img src={image} />
-            <p className="title">{id} - {name}</p>
-            <p> {type} </p>
-            </div>
-
-            <div className="card">
-            <img src={image} />
-            <p className="title">{id} - {name}</p>
-            <p> {type} </p>
-            </div>
+            <PokeCard id={id} name={name} image={image} type={type} />
         </div>
     )
 }
