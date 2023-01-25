@@ -1,0 +1,35 @@
+.searchbar input {
+    position: relative;
+    width: 1015px;
+    height: 67px;
+    top: 30px;
+    margin: auto;
+
+    background: #FFFFFF;
+    box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+
+    border: none;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    color: #747476;
+    line-height: 1.1875rem;
+    transition: all 0.3s ease;
+}
+
+.searchbar {
+    position: absolute;
+    top: 20px;
+    margin: auto;
+}
+
+input {
+    padding: 0px 20px;
+}
+
+.searchbar input:focus {
+    outline: none;
+    /* background-color: #e2e2e2; */
+    box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.2);
+  }
