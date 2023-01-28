@@ -9,7 +9,7 @@ export const Searchbar = ({search, setSearch}: any) => {
     return (
         <div className="searchbar">
             <input type='text' placeholder='What Pokemon are you looking for?' value={search} onChange={onSearchChange}></input>
-            {/* <img src="./assets/backgrounds/search.png" alt="search"></img> */}
+            <img className="search-icon" src="./assets/search.svg" alt="search-icon"></img>
         </div>
     )
 }
