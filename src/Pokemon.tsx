@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { PokeCard } from './PokeCard';
+import React, { useState } from 'react';
+import { PokeCard } from './components/PokeCard';
+import { Searchbar } from './components/Searchbar';
 import { usePokemons } from './hooks/usePokemons';
 
-interface IPokemon {
+interface Pokemon {
     id: number;
     name: string;
     image: string;
@@ -10,57 +11,37 @@ interface IPokemon {
     secondType: string;
 }
 
-// function Pokemon({id, name, image, type}:IPokemon) {
-function Pokemon() {
-    // const [name, setName] = useState<any>('' || []);
-    // const [type, setType] = useState('');
-    // const [image, setImage] = useState('');
-    // const [id, setId] = useState(0);
+const Pokemon = () => {
 
-    // useEffect(() => {
-    //     getPokemon(1)
-    // })
-
-    // const getPokemon = async (id: number): Promise<void> => {
-    //     const data: Response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-    //     const pokemon: any = await data.json()
-    //     const pokemonType: string = pokemon.types
-    //         .map((poke: any) => poke.type.name)
-    //         .join(", ")
-    //     const pokemonAbilities: string = pokemon.abilities
-    //         .map((poke: any) => poke.ability.name)
-    //         .join(", ")
-    //     console.log(pokemonAbilities)
-
-    //     const transformedPokemon = {
-    //         id: pokemon.id,
-    //         name: pokemon.name,
-    //         image: `${pokemon.sprites.other['official-artwork'].front_default}`,
-    //         firstType: pokemonType,
-    //         secondType: pokemonType,
-    //     }
-
-    //     setId(transformedPokemon.id);
-    //     setName(transformedPokemon.name);
-    //     setType(transformedPokemon.firstType);
-    //     setImage(transformedPokemon.image);
-    //     const res = showPokemon(transformedPokemon)
-    //     console.log(res)
-    // }
-
-    // const showPokemon = (pokemon: IPokemon): string => {
-    //     let output: string = `${pokemon.id} ${pokemon.name} ${pokemon.firstType} ${pokemon.image}`
-    //     return output
-    // }
 
     // getPokemon(736);
     // const typeColour = "#FF5733";
     const typeColour = "white";
     const { pokemons } = usePokemons();
+    const [search, setSearch] = useState('');
+
+    const currentPage = 0;
+
+    const filteredPokemon = () => {
+        if (search.length === 0) {
+            return pokemons.slice(currentPage, currentPage + 50);
+        }
+
+        const filtered = pokemons.filter(
+            (pokemon: Pokemon) => pokemon.name.includes(search.toLowerCase()) || (pokemon.id.toString() === search )
+            // (pokemon: Pokemon) => pokemon.name.includes(search.toLowerCase()) || pokemon.id.toString().includes(search)
+        );
+
+        console.log({filtered});
+        return filtered
+    }
 
     return (
-        <div className="card-grid">
-            {pokemons.map((pokemon: any) => <PokeCard id={pokemon.id} name={pokemon.name} image={pokemon.image} firstType={pokemon.firstType} secondType={pokemon.secondType} />)}
+        <div>
+            <Searchbar search={search} setSearch={setSearch}/>
+            <div className="card-grid">
+                {filteredPokemon().map((pokemon: Pokemon) => <PokeCard key={pokemon.id} {...pokemon} />)}
+            </div>
         </div>
     )
 }

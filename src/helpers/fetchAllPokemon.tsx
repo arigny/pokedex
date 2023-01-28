@@ -12,7 +12,6 @@ export const fetchAllPokemon = async () => {
 
 const transformedPokemonData = (data: any) => {
     const pokemons = data.map(({ id, name, sprites, types }: any) => {
-        name = name.slice(0,1).toUpperCase() + name.slice(1);
         const image = sprites.other['official-artwork'].front_default;
         const firstType = types[0].type.name;
         const secondType = types[1]?.type.name;
