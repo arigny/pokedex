@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PokeCard } from './components/PokeCard';
+import { PokeGrid } from './components/PokeGrid';
 import { Searchbar } from './components/Searchbar';
 import { usePokemons } from './hooks/usePokemons';
 
@@ -12,11 +12,7 @@ interface Pokemon {
 }
 
 const Pokemon = () => {
-
-
-    // getPokemon(736);
-    // const typeColour = "#FF5733";
-    const typeColour = "white";
+    // const typeColour = "white";
     const { pokemons } = usePokemons();
     const [search, setSearch] = useState('');
 
@@ -29,7 +25,6 @@ const Pokemon = () => {
 
         const filtered = pokemons.filter(
             (pokemon: Pokemon) => pokemon.name.includes(search.toLowerCase()) || (pokemon.id.toString() === search )
-            // (pokemon: Pokemon) => pokemon.name.includes(search.toLowerCase()) || pokemon.id.toString().includes(search)
         );
 
         console.log({filtered});
@@ -39,9 +34,7 @@ const Pokemon = () => {
     return (
         <div>
             <Searchbar search={search} setSearch={setSearch}/>
-            <div className="card-grid">
-                {filteredPokemon().map((pokemon: Pokemon) => <PokeCard key={pokemon.id} {...pokemon} />)}
-            </div>
+            <PokeGrid pokemons={filteredPokemon()} />
         </div>
     )
 }

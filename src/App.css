@@ -22,6 +22,7 @@
   justify-content: normal;
   font-size: calc(10px + 2vmin);
   color: white;
+  height: 100%;
 }
 
 .App-link {
@@ -35,22 +36,6 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.card-grid {
-  place-self: center;
-  display: grid;
-  /* eventually move <Pokemon/> component in App.tsx out of header section
-     and then need to allow one of the following lines. First keeps width
-     fixed upon window resizing, while second changes width to fill when
-     window size changes */
-  /* grid-template-columns: repeat(auto-fill, 200px); */
-  /* grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); */
-  /* grid-template-columns: repeat(auto-fit, minmax(0, min(100%/3, max(64px, 100%/5)))); */
-  grid-template-columns: repeat(3, minmax(230px, 1fr));
-  grid-gap: 70px 30px;
-  margin-top: 200px;
-  margin-bottom: 100px;
 }
 
 .card {
