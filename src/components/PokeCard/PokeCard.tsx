@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-// import './PokeCard.css'
+import './PokeCard.css'
 
 interface Pokemon {
     id: number | string;
