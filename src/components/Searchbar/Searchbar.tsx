@@ -1,3 +1,4 @@
+import searchIcon from './search.svg'
 import './Searchbar.css';
 
 export const Searchbar = ({search, setSearch}: any) => {
@@ -8,8 +9,8 @@ export const Searchbar = ({search, setSearch}: any) => {
 
     return (
         <div className="searchbar">
-            <input type='text' placeholder='What Pokemon are you looking for?' value={search} onChange={onSearchChange}></input>
-            <img className="search-icon" src="./assets/search.svg" alt="search-icon"></img>
+            <input type='text' placeholder='What Pokemon are you looking for?' value={search} onChange={onSearchChange} />
+            <img className="search-icon" src={searchIcon} alt="search-icon"></img>
         </div>
     )
 }
