@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { TypeBadge } from '../TypeBadge';
 import './PokeCard.css'
 
 interface Pokemon {
@@ -10,9 +11,7 @@ interface Pokemon {
 }
 
 export const PokeCard = ({id, name, image, firstType, secondType}: Pokemon) => {
-    const capitalizedName = () => {
-        return name.slice(0,1).toUpperCase() + name.slice(1)
-    }
+    const capitalizedName = name.slice(0,1).toUpperCase() + name.slice(1)
 
     const padId = () => {
         const idLength = id.toString().length;
@@ -30,9 +29,18 @@ export const PokeCard = ({id, name, image, firstType, secondType}: Pokemon) => {
             <div className="card">
             <img src={image} />
             <p className="id">#{padId()}</p>
-            <p className="name">{capitalizedName()}</p>
-            <p className='type'> {firstType} {secondType} </p>
+            <p className="name">{capitalizedName}</p>
+            <TypeBadges firstType={firstType} secondType={secondType} />
             </div>
+        </div>
+    )
+}
+
+const TypeBadges = ({firstType, secondType}: {firstType: string; secondType: string}) => {
+    return (
+        <div className='type'>
+            <TypeBadge type={firstType} />
+            {secondType && <TypeBadge type={secondType} />}
         </div>
     )
 }
