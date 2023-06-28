@@ -11,11 +11,13 @@ export const fetchAllPokemon = async () => {
 };
 
 const transformedPokemonData = (data: any) => {
-    const pokemons = data.map(({ id, name, sprites, types }: any) => {
+    const pokemons = data.map(({ id, name, sprites, types, stats }: any) => {
         const image = sprites.other['official-artwork'].front_default;
         const firstType = types[0].type.name;
         const secondType = types[1]?.type.name;
-        return { id, name, image, firstType, secondType };
+        const [hp, attack, defense, specialAttack, specialDefense, speed] = stats.map((stat: any) => stat.base_stat);
+        const pokeStats = {hp, attack, defense, specialAttack, specialDefense, speed};
+        return { id, name, image, firstType, secondType, pokeStats };
     });
     return pokemons;
 };
