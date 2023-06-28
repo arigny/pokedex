@@ -9,6 +9,7 @@ interface Pokemon {
     image: string;
     firstType: string;
     secondType: string;
+    pokeStats: any;
 }
 
 const Pokemon = () => {
