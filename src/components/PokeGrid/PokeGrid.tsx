@@ -8,6 +8,7 @@ interface Pokemon {
     image: string;
     firstType: string;
     secondType: string;
+    pokeStats: any;
 }
 
 export const PokeGrid = ({ pokemons }: any) => {

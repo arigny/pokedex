@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import { TypeBadge } from '../TypeBadge';
 import './PokeCard.css'
 
@@ -8,9 +9,10 @@ interface Pokemon {
     image: string;
     firstType: string;
     secondType: string;
+    pokeStats: any;
 }
 
-export const PokeCard = ({id, name, image, firstType, secondType}: Pokemon) => {
+export const PokeCard = ({id, name, image, firstType, secondType, pokeStats}: Pokemon) => {
     const capitalizedName = name.slice(0,1).toUpperCase() + name.slice(1)
 
     const padId = () => {
@@ -25,14 +27,12 @@ export const PokeCard = ({id, name, image, firstType, secondType}: Pokemon) => {
     }
 
     return (
-        <div>
-            <div className="card">
+        <Link to={{ pathname: `./details`}} state={{id, name, image, firstType, secondType, pokeStats}} className='card'>
             <img src={image} />
             <p className="id">#{padId()}</p>
             <p className="name">{capitalizedName}</p>
             <TypeBadges firstType={firstType} secondType={secondType} />
-            </div>
-        </div>
+        </Link>
     )
 }
 
