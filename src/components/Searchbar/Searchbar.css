@@ -39,9 +39,10 @@ input {
 
 .searchbar .search-icon {
     position: absolute;
-    top: 15px;
+    top: 14px;
     left: 25px;
     height: 25px;
+    width: 25px;
 }
 
 @media screen and (max-width: 720px) {
