@@ -1,0 +1,26 @@
+.container {
+  width: 350px;
+  height: 6px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 0;
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    width: 170px;
+  }
+}
+
+@media screen and (max-width: 1151px) and (min-width: 721px) {
+  .container {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1151px) {
+  .container {
+    width: 290px;
+  }
+}

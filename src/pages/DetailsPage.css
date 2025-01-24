@@ -1,0 +1,65 @@
+.details-container {
+  width: 100%;
+  height: 100vh;
+  align-content: center;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: repeat(auto-fill, minmax(700px, 1fr)); */
+  margin: 0 5%;
+  align-items: center;
+  justify-content: end;
+}
+
+.header {
+  text-align: left;
+  font-weight: 600;
+}
+
+.stats-table {
+  justify-self: end;
+}
+
+.japanese-name {
+  position: absolute;
+  font-size: 4.5em;
+  font-weight: 700;
+  color: rgba(0,0,0,0.4);
+  text-align: left;
+}
+
+img {
+  width: 85%;
+}
+
+@media screen and (max-width: 720px) {
+  .details-container {
+    align-content: normal;
+  }
+
+  .header {
+    margin-top: 20%;
+  }
+
+  .japanese-name {
+    font-size: 3em;
+    font-weight: 900;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-table {
+    justify-self: center;
+  }
+
+  img {
+    width: 70%;
+  }
+}
+
