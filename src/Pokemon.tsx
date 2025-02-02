@@ -14,12 +14,14 @@ interface Pokemon {
 
 const Pokemon = () => {
     // const typeColour = "white";
-    const { pokemons } = usePokemons();
+    const { isLoading, pokemons } = usePokemons();
     const [search, setSearch] = useState('');
 
     const currentPage = 0;
 
     const filteredPokemon = () => {
+        if (!pokemons) return [];
+
         if (search.length === 0) {
             return pokemons.slice(currentPage, currentPage + 50);
         }
