@@ -4,6 +4,7 @@
   "homepage": "https://arigny.github.io/pokedex",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.12.8",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -47,6 +48,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "graphql": "^16.10.0"
   }
 }

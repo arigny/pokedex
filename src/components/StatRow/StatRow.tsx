@@ -19,7 +19,7 @@ const statNames: any = {
   hp: 'HP',
   attack: 'Attack',
   defense: 'Defense',
-  specialAttack: 'Sp. Attack',
-  specialDefense: 'Sp. Defense',
+  "special-attack": 'Sp. Attack',
+  "special-defense": 'Sp. Defense',
   speed: 'Speed',
 }
