@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import { PokeGrid } from './components/PokeGrid';
 import { Searchbar } from './components/Searchbar';
-import { usePokemons } from './hooks/usePokemons';
+import { useFetchPokemonQuery } from './hooks/useFetchPokemonQuery';
 
 interface Pokemon {
     id: number;
     name: string;
+    japaneseName: string;
     image: string;
     firstType: string;
     secondType: string;
-    pokeStats: any;
+    pokeStats: Record<string, number>;
+    evolutionChain: Array<{id: number; name: string}>;
 }
 
 const Pokemon = () => {
     // const typeColour = "white";
-    const { isLoading, pokemons } = usePokemons();
     const [search, setSearch] = useState('');
+    const {pokemonData: pokemons, loading, error} = useFetchPokemonQuery();
 
     const currentPage = 0;
 
@@ -30,7 +32,6 @@ const Pokemon = () => {
             (pokemon: Pokemon) => pokemon.name.includes(search.toLowerCase()) || (pokemon.id.toString() === search )
         );
 
-        console.log({filtered});
         return filtered
     }
 

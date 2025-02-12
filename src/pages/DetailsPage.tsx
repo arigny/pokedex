@@ -34,7 +34,7 @@ export const DetailsPage = () => {
 
         <div className='content'>
           <div style={{textAlign: 'right'}}>
-            <div className='japanese-name'>フシギダネ</div>
+            <div className='japanese-name'>{state.japaneseName}</div>
             <img src={state.image} alt={capitalizedName} />
           </div>
           

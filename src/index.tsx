@@ -1,15 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+import {persistCache, LocalStorageWrapper} from 'apollo3-cache-persist';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+const cache = new InMemoryCache();
+
+await persistCache({
+  cache,
+  storage: new LocalStorageWrapper(window.localStorage),
+});
+
+const client = new ApolloClient({
+  uri: 'https://beta.pokeapi.co/graphql/v1beta',
+  cache,
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>
 );
 

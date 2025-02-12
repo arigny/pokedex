@@ -3,12 +3,14 @@ import { PokeCard } from '../PokeCard';
 import './PokeGrid.css';
 
 interface Pokemon {
-    id: number;
+    id: number | string;
     name: string;
+    japaneseName: string;
     image: string;
     firstType: string;
     secondType: string;
-    pokeStats: any;
+    pokeStats: Record<string, number>;
+    evolutionChain: Array<{id: number; name: string}>;
 }
 
 export const PokeGrid = ({ pokemons }: any) => {
