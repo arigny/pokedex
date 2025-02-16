@@ -20,7 +20,7 @@ const Pokemon = () => {
     const [offset, setOffset] = useState(50);
     const observerTarget = useRef<HTMLDivElement>(null);
 
-    const numberOfPokemon = 1025
+    const numberOfPokemon = 1025;
     const {pokemonData: pokemons, loading, error} = useFetchPokemonQuery(numberOfPokemon);
 
     const currentPage = 0;
