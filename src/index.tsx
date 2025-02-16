@@ -8,10 +8,23 @@ import reportWebVitals from './reportWebVitals';
 
 const cache = new InMemoryCache();
 
-await persistCache({
-  cache,
-  storage: new LocalStorageWrapper(window.localStorage),
-});
+function measureCacheSize() {
+  const state = cache.extract();
+  const size = new TextEncoder().encode(JSON.stringify(state)).length;
+  console.log(`Cache size: ${size} bytes (${(size/1024/1024).toFixed(2)} MB)`);
+  return size;
+}
+
+try {
+  await persistCache({
+    cache,
+    storage: new LocalStorageWrapper(window.sessionStorage),
+  });
+  console.log('Caching succeeded')
+  setTimeout(measureCacheSize, 500);
+} catch (e) {
+  console.warn('Caching failed')
+}
 
 const client = new ApolloClient({
   uri: 'https://beta.pokeapi.co/graphql/v1beta',
