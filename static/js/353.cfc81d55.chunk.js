@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpokedex=self.webpackChunkpokedex||[]).push([[353],{353:(e,c,s)=>{e.exports=s.p+"static/media/fighting.d530cdcc739405ac8273.svg"}}]);

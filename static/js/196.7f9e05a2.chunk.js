@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpokedex=self.webpackChunkpokedex||[]).push([[196],{4196:(e,s,p)=>{e.exports=p.p+"static/media/ice.024ab497500ec2ef2e16.svg"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpokedex=self.webpackChunkpokedex||[]).push([[68],{6068:(e,s,d)=>{e.exports=d.p+"static/media/water.9d438a1d13b94b4d95de.svg"}}]);

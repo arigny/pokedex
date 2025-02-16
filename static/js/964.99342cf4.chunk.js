@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpokedex=self.webpackChunkpokedex||[]).push([[964],{964:(e,s,p)=>{e.exports=p.p+"static/media/ghost.f66cab9f362b00eb9ad3.svg"}}]);

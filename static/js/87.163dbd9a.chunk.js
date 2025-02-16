@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpokedex=self.webpackChunkpokedex||[]).push([[87],{2087:(e,s,p)=>{e.exports=p.p+"static/media/poison.c47487592de87b8f4575.svg"}}]);

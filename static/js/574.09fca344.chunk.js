@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpokedex=self.webpackChunkpokedex||[]).push([[574],{574:(e,s,c)=>{e.exports=c.p+"static/media/flying.3c57b2bcd90d745d7e2c.svg"}}]);

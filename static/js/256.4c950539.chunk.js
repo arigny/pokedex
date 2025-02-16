@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpokedex=self.webpackChunkpokedex||[]).push([[256],{256:(e,s,p)=>{e.exports=p.p+"static/media/psychic.d71e14475833ca6ba4e0.svg"}}]);
