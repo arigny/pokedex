@@ -1,1 +1,1 @@
-export {PokeGrid} from './PokeGrid';
+export { PokeGrid } from "./PokeGrid";
