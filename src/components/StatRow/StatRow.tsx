@@ -1,9 +1,8 @@
-import { Statbar } from "../Statbar/Statbar"
+import { Statbar } from "../Statbar/Statbar";
 
-import './StatsRow.css';
+import "./StatsRow.css";
 
-export const StatRow = ({name, value}: any) => {
-
+export const StatRow = ({ name, value }: any) => {
   const statName = statNames[name];
 
   return (
@@ -12,14 +11,14 @@ export const StatRow = ({name, value}: any) => {
       <span className="stat-value">{value}</span>
       <Statbar value={value} />
     </div>
-  )
-}
+  );
+};
 
 const statNames: any = {
-  hp: 'HP',
-  attack: 'Attack',
-  defense: 'Defense',
-  "special-attack": 'Sp. Attack',
-  "special-defense": 'Sp. Defense',
-  speed: 'Speed',
-}
+  hp: "HP",
+  attack: "Attack",
+  defense: "Defense",
+  "special-attack": "Sp. Attack",
+  "special-defense": "Sp. Defense",
+  speed: "Speed",
+};
