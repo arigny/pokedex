@@ -1,8 +1,19 @@
 import searchIcon from "./search.svg";
 import "./Searchbar.css";
 
-export const Searchbar = ({ search, setSearch }: any) => {
-  const onSearchChange = ({ target }: any) => {
+interface SearchBarProps {
+  search: string;
+  setSearch: (value: string) => void;
+}
+
+interface SearchEvent {
+  target: {
+    value: string;
+  };
+}
+
+export const Searchbar = ({ search, setSearch }: SearchBarProps) => {
+  const onSearchChange = ({ target }: SearchEvent) => {
     // setCurrentPage(0);
     setSearch(target.value);
   };

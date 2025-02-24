@@ -1,6 +1,10 @@
 import "./Statbar.css";
 
-export const Statbar = ({ value }: any) => {
+interface Props {
+  value: number;
+}
+
+export const Statbar = ({ value }: Props) => {
   // max value for each stat is 255
   const percent = (value / 255) * 100;
 
