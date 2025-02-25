@@ -2,17 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { PokeGrid } from "./components/PokeGrid";
 import { Searchbar } from "./components/Searchbar";
 import { useFetchPokemonQuery } from "./hooks/useFetchPokemonQuery";
-
-interface Pokemon {
-  id: number;
-  name: string;
-  japaneseName: string;
-  image: string;
-  firstType: string;
-  secondType: string;
-  pokeStats: Record<string, number>;
-  evolutionChain: Array<{ id: number; name: string }>;
-}
+import type { Pokemon } from "./hooks/useFetchPokemonQuery";
 
 const Pokemon = () => {
   // const typeColour = "white";
@@ -21,10 +11,8 @@ const Pokemon = () => {
   const observerTarget = useRef<HTMLDivElement>(null);
 
   const numberOfPokemon = 1025;
-  const {
-    pokemonData: pokemons,
-    loading,
-  } = useFetchPokemonQuery(numberOfPokemon);
+  const { pokemonData: pokemons, loading } =
+    useFetchPokemonQuery(numberOfPokemon);
 
   const currentPage = 0;
   const isSearching = search.length > 0;

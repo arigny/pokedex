@@ -2,9 +2,10 @@ import { Link, useLocation } from "react-router-dom";
 import { StatRow } from "../components/StatRow/StatRow";
 
 import "./DetailsPage.css";
+import { Pokemon } from "../hooks/useFetchPokemonQuery";
 
 export const DetailsPage = () => {
-  const state = useLocation().state;
+  const state = useLocation().state as Pokemon;
   const capitalizedName =
     state.name.slice(0, 1).toUpperCase() + state.name.slice(1);
 

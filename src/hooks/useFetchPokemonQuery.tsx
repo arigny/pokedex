@@ -1,6 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
+import { PokemonQueryResponse } from "./types";
 
-interface Pokemon {
+export interface Pokemon {
   id: number;
   name: string;
   japaneseName: string;
@@ -63,10 +64,10 @@ export const useFetchPokemonQuery = (limit: number = 151) => {
   };
 };
 
-const extractPokemonData = (data: any): Pokemon[] => {
+const extractPokemonData = (data: PokemonQueryResponse): Pokemon[] => {
   if (!data?.pokemon) return [];
 
-  return data.pokemon.map((pokemon: any) => ({
+  return data.pokemon.map((pokemon) => ({
     id: pokemon.id,
     name: pokemon.name,
     japaneseName: pokemon.jap_name[0].name,
@@ -74,13 +75,13 @@ const extractPokemonData = (data: any): Pokemon[] => {
     firstType: pokemon.details[0].types[0].type.name,
     secondType: pokemon.details[0].types[1]?.type.name,
     pokeStats: pokemon.details[0].stats.reduce(
-      (acc: any, stat: any) => ({
+      (acc: Record<string, number>, stat) => ({
         ...acc,
         [stat.stat.name]: stat.base_stat,
       }),
       {},
     ),
-    evolutionChain: pokemon.evolutions.pokemon.map((pokemon: any) => ({
+    evolutionChain: pokemon.evolutions.pokemon.map((pokemon) => ({
       id: pokemon.id,
       name: pokemon.name,
     })),

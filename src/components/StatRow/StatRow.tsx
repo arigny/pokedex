@@ -2,7 +2,12 @@ import { Statbar } from "../Statbar/Statbar";
 
 import "./StatsRow.css";
 
-export const StatRow = ({ name, value }: any) => {
+interface Props {
+  name: string;
+  value: number;
+}
+
+export const StatRow = ({ name, value }: Props) => {
   const statName = statNames[name];
 
   return (
@@ -14,7 +19,7 @@ export const StatRow = ({ name, value }: any) => {
   );
 };
 
-const statNames: any = {
+const statNames: Record<string, string> = {
   hp: "HP",
   attack: "Attack",
   defense: "Defense",

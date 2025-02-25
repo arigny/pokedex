@@ -13,7 +13,11 @@ interface Pokemon {
   evolutionChain: Array<{ id: number; name: string }>;
 }
 
-export const PokeGrid = ({ pokemons }: any) => {
+interface Props {
+  pokemons: Pokemon[];
+}
+
+export const PokeGrid = ({ pokemons }: Props) => {
   const errorMessages = [
     "Oh sorry",
     "Snorlax is blocking the path!",
