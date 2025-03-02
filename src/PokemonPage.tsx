@@ -4,7 +4,7 @@ import { Searchbar } from "./components/Searchbar";
 import { useFetchPokemonQuery } from "./hooks/useFetchPokemonQuery";
 import type { Pokemon } from "./hooks/useFetchPokemonQuery";
 
-const Pokemon = () => {
+export const PokemonPage = () => {
   // const typeColour = "white";
   const [search, setSearch] = useState("");
   const [offset, setOffset] = useState(50);
@@ -67,5 +67,3 @@ const Pokemon = () => {
     </div>
   );
 };
-
-export default Pokemon;
